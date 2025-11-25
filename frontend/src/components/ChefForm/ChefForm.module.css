@@ -1,0 +1,63 @@
+main {
+    text-align: center;
+    padding: 3rem 3rem 0rem 3rem;
+}
+
+.ChefForm {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.ChefForm input {
+    padding: 0.5rem 1rem;
+    margin: .5rem 0;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.ChefForm button {
+    width: 30%;
+    border-radius: 5px;
+}
+
+.ChefForm button::before {
+    content: "+";
+    margin-right: 5px;
+}
+
+main ul {
+    text-align: left;
+    padding: 0;
+}
+
+.ChefForm_footer {
+    text-align: left;
+    padding: 2rem;
+    background-color: #c5c3c0;
+    margin: 2rem 0 1rem;
+    border-radius: 5px;
+}
+
+h3 {
+    margin: 0;
+    text-align: left;
+}
+
+.ChefForm_footerButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.ChefForm_footerButton p {
+    margin: 0;
+    padding: 0;
+}
+
+.ChefForm_footerButton button {
+    margin: 0;
+}

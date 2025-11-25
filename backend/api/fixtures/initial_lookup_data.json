@@ -1,0 +1,35 @@
+[
+    { "model": "api.role", "pk": 1, "fields": { "name": "ADMIN" } },
+    { "model": "api.role", "pk": 2, "fields": { "name": "PATIENT" } },
+    { "model": "api.role", "pk": 3, "fields": { "name": "DOCTOR" } },
+    { "model": "api.role", "pk": 4, "fields": { "name": "STAFF" } },
+
+    { "model": "api.employeetype", "pk": 1, "fields": { "name": "DOCTOR" } },
+    { "model": "api.employeetype", "pk": 2, "fields": { "name": "NURSE" } },
+    { "model": "api.employeetype", "pk": 3, "fields": { "name": "TECHNICIAN" } },
+    { "model": "api.employeetype", "pk": 4, "fields": { "name": "ADMIN_STAFF" } },
+
+    { "model": "api.department", "pk": 1, "fields": { "name": "Khoa Nội Tổng Quát" } },
+    { "model": "api.department", "pk": 2, "fields": { "name": "Khoa Ngoại Tiêu Hóa" } },
+    { "model": "api.department", "pk": 3, "fields": { "name": "Khoa Xét Nghiệm" } },
+    { "model": "api.department", "pk": 4, "fields": { "name": "Khoa Chẩn Đoán Hình Ảnh" } },
+
+    { "model": "api.hospital", "pk": 1, "fields": { "name": "Bệnh viện Bạch Mai", "address": "78 Giải Phóng" } },
+    { "model": "api.hospital", "pk": 2, "fields": { "name": "Bệnh viện Y Học Cổ Truyền", "address": "29 Nguyễn Bỉnh Khiêm" } },
+
+    { "model": "api.healthconditiontype", "pk": 1, "fields": { "name": "Dị ứng" } },
+    { "model": "api.healthconditiontype", "pk": 2, "fields": { "name": "Mãn tính" } },
+    { "model": "api.healthconditiontype", "pk": 3, "fields": { "name": "Phẫu thuật" } },
+    { "model": "api.healthconditiontype", "pk": 4, "fields": { "name": "Di truyền" } },
+    
+    { "model": "api.resulttype", "pk": 1, "fields": { "name": "Xét nghiệm máu" } },
+    { "model": "api.resulttype", "pk": 2, "fields": { "name": "Siêu âm" } },
+    { "model": "api.resulttype", "pk": 3, "fields": { "name": "X-quang ngực" } },
+
+    { "model": "api.drug", "pk": 1, "fields": { "name": "Paracetamol 500mg", "unit": "Viên", "price": 1000.0 } },
+    { "model": "api.drug", "pk": 2, "fields": { "name": "Amoxicillin 250mg", "unit": "Hộp", "price": 55000.0 } },
+    
+    { "model": "api.service", "pk": 1, "fields": { "name": "Khám Nội Tổng Quát", "price": 150000.0 } },
+    { "model": "api.service", "pk": 2, "fields": { "name": "Xét nghiệm Công thức máu (CBC)", "price": 80000.0 } },
+    { "model": "api.service", "pk": 3, "fields": { "name": "Siêu âm ổ bụng", "price": 300000.0 } }
+]

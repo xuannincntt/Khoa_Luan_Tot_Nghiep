@@ -1,0 +1,305 @@
+/* ======================================================= */
+/* 0. GLOBAL STYLES */
+/* ======================================================= */
+
+/* Giả định biến header-height đã được khai báo trong index.css */
+main {
+    padding: 0px !important;
+    width: 100vh;
+}
+
+.homepage-container {
+    background-color: var(--color-background-main);
+    width: 100vw; /* Chiếm 100% chiều rộng viewport */
+    overflow-x: hidden; /* Ngăn chặn cuộn ngang cho container này */
+    padding: 0; /* Loại bỏ mọi padding thừa cho container chính */
+    margin: 0; /* Loại bỏ mọi margin thừa cho container chính */
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px 5%;
+    /* margin-top: 150px; để tạo khoảng trống cho Quick Links nhô lên */
+}
+
+/* ======================================================= */
+/* 1. HERO SECTION STYLES (BANNER IMAGE) */
+/* ======================================================= */
+.hero-section {
+    position: relative;
+    padding: 0;
+    margin: 0px auto;
+    height: 65vh;
+}
+
+.hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100%; 
+    width: 100vw; /* Chiếm 100% chiều rộng viewport */
+    overflow-x: hidden; /* Ngăn chặn cuộn ngang cho container này */
+    padding: 0; /* Loại bỏ mọi padding thừa cho container chính */
+}
+ 
+.hero-image {
+    height: 100%; 
+    object-fit: cover; /* Cắt ảnh để lấp đầy không gian */
+    display: block;
+}
+
+/* ======================================================= */
+/* 2. QUICK LINKS SECTION STYLES (HOÀN THIỆN) */
+/* ======================================================= */
+.quick-links-section {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    
+    /* Vị trí nổi lên trên Banner */
+    position: absolute; 
+    left: 50%;
+    transform: translate(-50%, 50%); /* Đã đổi từ -50% sang +50% để nằm hoàn toàn bên ngoài Banner */
+    bottom: 0; 
+    
+    /* Cấu trúc container chính */
+    max-width: 1200px;
+    width: 90%; 
+    z-index: 3; 
+
+    /* STYLE CHO CONTAINER (KHUNG TRẮNG LỚN) */
+    background-color: var(--color-background-main);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.quick-card {
+    flex: 1;
+    background-color: transparent;
+    color: var(--color-text-dark);
+    padding: 15px 20px;
+    box-shadow: none;
+    text-decoration: none;
+    text-align: left;
+    transition: background-color 0.3s;
+    border-top: none; 
+    
+    border-right: 1px solid var(--color-background-light); 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quick-card:last-child {
+    border-right: none;
+}
+
+.quick-card:hover {
+    background-color: var(--color-background-light);
+}
+
+.icon-wrapper {
+    font-size: 24px;
+    color: var(--color-secondary); /* Xanh lá đậm */
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 5px 0;
+    color: var(--color-text-dark);
+}
+
+.card-description {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ======================================================= */
+/* 3, 4, 5, 6. GLOBAL SECTION STYLES */
+/* ======================================================= */
+.section-container {
+    /* Đẩy nội dung xuống đủ để Quick Links không bị che */
+    margin-top: 150px; 
+    padding: 40px 5%;
+    box-shadow: none; /* Bỏ shadow nếu không cần */
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--color-primary-light);
+    padding-bottom: 10px;
+}
+
+.section-icon {
+    font-size: 28px;
+    color: var(--color-primary);
+    margin-right: 15px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.view-all-button {
+    background-color: var(--color-primary);
+    color: var(--color-background-main);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.view-all-button:hover {
+    background-color: var(--color-primary-light);
+}
+
+.center-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* --- News Grid --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.main-news-article {
+    background-color: var(--color-background-light);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.main-news-article h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+.main-news-article .view-all-button {
+    margin-top: 15px;
+}
+
+.small-news-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.news-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid var(--color-background-light);
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+
+.news-icon {
+    color: var(--color-primary-light);
+    font-size: 18px;
+}
+
+.news-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.news-date {
+    margin: 0 0 0 auto;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+/* --- Featured Items Grid (3 Cột) --- */
+.featured-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.featured-item-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-background-light);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    background-color: var(--color-background-light);
+}
+
+.featured-item-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item-image {
+    width: 100%;
+    height: 150px;
+    background-color: var(--color-background-light);
+}
+.featured-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-item-content {
+    padding: 15px;
+}
+
+.featured-item-title {
+    color: var(--color-primary);
+    font-size: 16px;
+    margin-top: 0;
+}
+
+/* --- Services Grid & About Grid (4 Cột) --- */
+.services-grid,
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    padding: 20px;
+    border: 1px solid var(--color-background-light);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    background-color: var(--color-background-light);
+}
+
+.service-card:hover {
+    background-color: var(--color-background-light);
+    border-color: var(--color-primary-light);
+}
+
+.service-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-primary);
+}

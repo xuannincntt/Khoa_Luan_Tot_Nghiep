@@ -1,0 +1,168 @@
+/* Sử dụng màu chính làm nền, chữ trắng */
+main {
+    padding: 0px !important;
+    min-height: calc(100vh - var(--header-height) - 50px);
+    width: 100vh;
+}
+
+.footer-container {
+    background-color: var(--color-primary); /* #00796B */
+    color: var(--color-background-main); /* #FFFFFF */
+    padding: 40px 5%;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    padding: 0 15px;
+    min-width: 250px;
+}
+
+/* ------------------- */
+/* CỘT 1: THÔNG TIN CƠ BẢN */
+/* ------------------- */
+.logo-info {
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 40px;
+    margin-right: 15px;
+    color: var(--color-accent-slogan); /* Màu vàng nhấn */
+}
+
+.main-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    color: var(--color-background-main);
+}
+
+.sub-name {
+    margin: 0;
+    font-size: 12px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.contact-list li svg { /* Icon Font Awesome */
+    margin-right: 10px;
+    margin-top: 4px;
+    color: var(--color-accent-slogan); /* Icon nổi bật */
+}
+
+.contact-list p {
+    margin: 0 0 5px 25px; /* Thụt đầu dòng cho lịch làm việc chi tiết */
+    font-style: italic;
+    font-size: 13px;
+}
+
+.copyright-info {
+    font-size: 12px;
+    margin-top: 30px;
+    opacity: 0.8;
+}
+
+/* ------------------- */
+/* CỘT 2 & 3: LINKS */
+/* ------------------- */
+.footer-col h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-background-main);
+    border-bottom: 2px solid var(--color-accent-slogan);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.quick-links,
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-link-item,
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-background-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền mờ cho từng item */
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.quick-link-item:hover,
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.15); /* Hover nhẹ */
+    border-color: var(--color-background-main);
+}
+
+.quick-link-item svg {
+    font-size: 14px;
+}
+
+/* Mạng xã hội và chứng nhận */
+.social-media {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: var(--color-background-main);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--color-accent-slogan);
+}
+
+.certifications {
+    display: flex;
+    gap: 10px;
+}
+
+.certification-badge {
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+/* Footer dưới cùng */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+    font-size: 12px;
+}
