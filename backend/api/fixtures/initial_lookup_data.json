@@ -1,35 +1,149 @@
 [
-    { "model": "api.role", "pk": 1, "fields": { "name": "ADMIN" } },
-    { "model": "api.role", "pk": 2, "fields": { "name": "PATIENT" } },
-    { "model": "api.role", "pk": 3, "fields": { "name": "DOCTOR" } },
-    { "model": "api.role", "pk": 4, "fields": { "name": "STAFF" } },
-
-    { "model": "api.employeetype", "pk": 1, "fields": { "name": "DOCTOR" } },
-    { "model": "api.employeetype", "pk": 2, "fields": { "name": "NURSE" } },
-    { "model": "api.employeetype", "pk": 3, "fields": { "name": "TECHNICIAN" } },
-    { "model": "api.employeetype", "pk": 4, "fields": { "name": "ADMIN_STAFF" } },
-
-    { "model": "api.department", "pk": 1, "fields": { "name": "Khoa Nội Tổng Quát" } },
-    { "model": "api.department", "pk": 2, "fields": { "name": "Khoa Ngoại Tiêu Hóa" } },
-    { "model": "api.department", "pk": 3, "fields": { "name": "Khoa Xét Nghiệm" } },
-    { "model": "api.department", "pk": 4, "fields": { "name": "Khoa Chẩn Đoán Hình Ảnh" } },
-
-    { "model": "api.hospital", "pk": 1, "fields": { "name": "Bệnh viện Bạch Mai", "address": "78 Giải Phóng" } },
-    { "model": "api.hospital", "pk": 2, "fields": { "name": "Bệnh viện Y Học Cổ Truyền", "address": "29 Nguyễn Bỉnh Khiêm" } },
-
-    { "model": "api.healthconditiontype", "pk": 1, "fields": { "name": "Dị ứng" } },
-    { "model": "api.healthconditiontype", "pk": 2, "fields": { "name": "Mãn tính" } },
-    { "model": "api.healthconditiontype", "pk": 3, "fields": { "name": "Phẫu thuật" } },
-    { "model": "api.healthconditiontype", "pk": 4, "fields": { "name": "Di truyền" } },
-    
-    { "model": "api.resulttype", "pk": 1, "fields": { "name": "Xét nghiệm máu" } },
-    { "model": "api.resulttype", "pk": 2, "fields": { "name": "Siêu âm" } },
-    { "model": "api.resulttype", "pk": 3, "fields": { "name": "X-quang ngực" } },
-
-    { "model": "api.drug", "pk": 1, "fields": { "name": "Paracetamol 500mg", "unit": "Viên", "price": 1000.0 } },
-    { "model": "api.drug", "pk": 2, "fields": { "name": "Amoxicillin 250mg", "unit": "Hộp", "price": 55000.0 } },
-    
-    { "model": "api.service", "pk": 1, "fields": { "name": "Khám Nội Tổng Quát", "price": 150000.0 } },
-    { "model": "api.service", "pk": 2, "fields": { "name": "Xét nghiệm Công thức máu (CBC)", "price": 80000.0 } },
-    { "model": "api.service", "pk": 3, "fields": { "name": "Siêu âm ổ bụng", "price": 300000.0 } }
+  {
+    "model": "api.role",
+    "pk": 1,
+    "fields": { "name": "ADMIN" }
+  },
+  {
+    "model": "api.role",
+    "pk": 2,
+    "fields": { "name": "DOCTOR" }
+  },
+  {
+    "model": "api.role",
+    "pk": 3,
+    "fields": { "name": "PATIENT" }
+  },
+  {
+    "model": "api.employeetype",
+    "pk": 1,
+    "fields": { "name": "Bác sĩ Chuyên khoa" }
+  },
+  {
+    "model": "api.department",
+    "pk": 1,
+    "fields": { "name": "Khoa Nội Tiêu Hóa" }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 1,
+    "fields": {
+      "name": "Bệnh viện Đa khoa Trung Tâm",
+      "address": "123 Đường Nguyễn Văn Cừ, Q.5, TP.HCM",
+      "phone": "02839999999"
+    }
+  },
+  {
+    "model": "api.drug",
+    "pk": 1,
+    "fields": {
+      "name": "Paracetamol 500mg",
+      "unit": "Viên",
+      "price": 2000.0,
+      "recorded_at": "2023-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 1,
+    "fields": {
+      "name": "Khám Nội tổng quát",
+      "price": 150000.0
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+      "citizen_id": "001099000001",
+      "password_hash": "pbkdf2_sha256$...", 
+      "email": "bacsi@example.com",
+      "phone": "0909000001",
+      "is_active": true,
+      "created_at": "2023-01-01T00:00:00Z",
+      "role": 2
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 2,
+    "fields": {
+      "citizen_id": "079099000002",
+      "password_hash": "pbkdf2_sha256$...",
+      "email": "benhnhan@example.com",
+      "phone": "0909000002",
+      "is_active": true,
+      "created_at": "2023-01-01T00:00:00Z",
+      "role": 3
+    }
+  },
+  {
+    "model": "api.employee",
+    "pk": 1,
+    "fields": {
+      "employee_type": 1,
+      "full_name": "Nguyễn Văn Bác Sĩ",
+      "department": 1,
+      "date_of_birth": "1980-01-01",
+      "gender": "Nam",
+      "address": "TP.HCM"
+    }
+  },
+  {
+    "model": "api.patient",
+    "pk": 2,
+    "fields": {
+      "full_name": "Trần Thị Bệnh Nhân",
+      "date_of_birth": "1995-05-05",
+      "gender": "Nữ",
+      "address": "Hà Nội"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 1,
+    "fields": {
+      "patient": 2,
+      "doctor": 1,
+      "appointment_datetime": "2023-10-25T09:00:00Z",
+      "status": "C",
+      "created_at": "2023-10-20T08:00:00Z"
+    }
+  },
+  {
+    "model": "api.medicalrecord",
+    "pk": 2,
+    "fields": {
+      "date_created": "2023-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.medicalvisit",
+    "pk": 1,
+    "fields": {
+      "record": 2,
+      "diagnosis": "Viêm họng cấp",
+      "treatment_protocol": "Nghỉ ngơi, uống nhiều nước, dùng thuốc theo đơn",
+      "recorded_at": "2023-10-25T09:30:00Z"
+    }
+  },
+  {
+    "model": "api.prescription",
+    "pk": 1,
+    "fields": {
+      "prescription_date": "2023-10-25T09:40:00Z"
+    }
+  },
+  {
+    "model": "api.prescriptiondetail",
+    "pk": 1,
+    "fields": {
+      "prescription": 1,
+      "drug": 1,
+      "quantity": 10,
+      "dosage": "Sáng 1 viên, Chiều 1 viên sau ăn",
+      "duration_days": 5,
+      "recorded_at": "2023-10-25T09:45:00Z"
+    }
+  }
 ]

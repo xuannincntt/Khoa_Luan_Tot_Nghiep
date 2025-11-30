@@ -1,0 +1,297 @@
+.container {
+    /* Sử dụng Flexbox để căn giữa hoàn hảo */
+    display: flex;
+    justify-content: center; /* Căn giữa chiều ngang */
+    align-items: flex-start; /* Căn sát trên một chút cho dễ nhìn, hoặc center nếu muốn giữa màn hình */
+    
+    padding: 40px 20px;
+    background-color: var(--color-background-light);
+    min-height: calc(100vh - 80px); /* Trừ đi chiều cao Header */
+    width: 100%; /* Bắt buộc rộng 100% */
+    box-sizing: border-box; /* Để padding không làm vỡ khung */
+}
+
+.card {
+    background: var(--color-background-main);
+    width: 100%;
+    max-width: 800px; /* Độ rộng tối đa của Form */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--color-primary);
+    
+    /* Đảm bảo card không bị dính sát lề trên mobile */
+    margin: 0 auto; 
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.header h2 {
+    color: var(--color-primary);
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.header p {
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Alert Box */
+.alert {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.alertError {
+    background-color: #ffebee;
+    color: var(--color-status-error);
+    border: 1px solid #ffcdd2;
+}
+
+.alertSuccess {
+    background-color: #e8f5e9;
+    color: var(--color-status-success);
+    border: 1px solid #c8e6c9;
+}
+
+/* Form Styles */
+.formGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sectionTitle {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    font-size: 16px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.sectionTitle::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+    margin-left: 10px;
+}
+
+.userInfo {
+    background-color: var(--color-background-second); /* Nền vàng nhạt */
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid var(--color-accent-slogan);
+    display: flex;
+    gap: 30px;
+}
+
+.userInfo p {
+    margin: 0;
+    color: var(--color-text-dark);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-text-dark);
+}
+
+.formGroup select,
+.formGroup input,
+.formGroup textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border 0.3s;
+}
+
+.formGroup select:focus,
+.formGroup input:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.1);
+}
+
+.formGroup select:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btnSubmit {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btnSubmit:hover {
+    background-color: var(--color-primary-light);
+}
+
+.btnSubmit:disabled {
+    background-color: #ccc;
+    cursor: wait;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+    .userInfo {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ... Giữ các style cũ của .container, .card, .header ... */
+
+/* TABS STYLE */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tabs button:hover {
+    background-color: #f9f9f9;
+}
+
+.activeTab {
+    border-bottom: 3px solid var(--color-primary);
+    color: var(--color-primary) !important;
+}
+
+/* GRID NGÀY (7 ngày) */
+.dateGrid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Cho phép cuộn ngang nếu màn hình nhỏ */
+    padding-bottom: 5px;
+}
+
+.dateBtn, .selectedDate {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.selectedDate {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* GRID GIỜ (Slots) */
+.slotGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Tự động chia cột */
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.slotBtn, .selectedSlot {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.slotBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.selectedSlot {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Form Group chung */
+.formGroup {
+    margin-bottom: 20px;
+}
+.formGroup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+.formGroup select, .formGroup input, .formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btnSubmit {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-status-success); /* Dùng màu xanh lá cho nút xác nhận */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btnSubmit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

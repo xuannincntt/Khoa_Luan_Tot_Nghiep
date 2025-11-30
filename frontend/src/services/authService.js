@@ -1,36 +1,63 @@
-import axios from 'axios'; // Cần cài đặt: npm install axios
+import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api/'; // Thay đổi nếu API của bạn ở địa chỉ khác
+const API_BASE_URL = 'http://localhost:8000/api/';
 
+// --- HÀM ĐĂNG KÝ (Register) ---
+export const registerPatient = async (formData) => {
+    // Chuyển đổi key từ camelCase (React) sang snake_case (Django Python)
+    const payload = {
+        citizen_id: formData.citizenId,
+        password: formData.password,
+        full_name: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        date_of_birth: formData.dateOfBirth,
+        gender: formData.gender,
+        address: formData.address
+    };
+
+    try {
+        // Gọi vào endpoint chúng ta đã tạo: /api/patients/
+        const response = await axios.post(`${API_BASE_URL}patients/`, payload, {
+            headers: { 'Content-Type': 'application/json' }
+        });
+        return { success: true, message: 'Đăng ký thành công!' };
+    } catch (error) {
+        console.error("Register Error:", error.response);
+        // Lấy thông báo lỗi chi tiết từ Backend trả về
+        let msg = "Đăng ký thất bại.";
+        if (error.response?.data) {
+            const errData = error.response.data;
+            // Kiểm tra các lỗi phổ biến
+            if (errData.citizen_id) msg = `CCCD: ${errData.citizen_id[0]}`;
+            else if (errData.phone) msg = `SĐT: ${errData.phone[0]}`;
+            else if (errData.password) msg = `Mật khẩu: ${errData.password[0]}`;
+        }
+        return { success: false, message: msg };
+    }
+};
+
+// --- HÀM ĐĂNG NHẬP (Login) ---
 export const loginUser = async (citizenId, password) => {
     try {
-        const response = await axios.post(`${API_BASE_URL}login/`, { // Giả sử có endpoint /api/login/
+        const response = await axios.post(`${API_BASE_URL}login/`, {
             citizen_id: citizenId,
-            password: password, // Trong thực tế, bạn sẽ gửi password đã được hash/mã hóa
+            password: password
         });
 
-        // Giả sử API trả về token và thông tin user
-        return { success: true, token: response.data.token, user: response.data.user };
-
+        // Backend trả về: { success: true, token: "...", user: {...} }
+        if (response.data.success) {
+            return { 
+                success: true, 
+                token: response.data.token, 
+                user: response.data.user 
+            };
+        }
+        return { success: false, message: response.data.message || "Lỗi không xác định" };
     } catch (error) {
-        console.error('Lỗi API đăng nhập:', error.response?.data || error.message);
-        return { success: false, message: error.response?.data?.detail || 'Lỗi đăng nhập.' };
+        return { 
+            success: false, 
+            message: error.response?.data?.message || 'Sai thông tin đăng nhập hoặc lỗi server.' 
+        };
     }
-};
-
-// Bạn có thể thêm các hàm khác như registerUser, logoutUser, checkAuthStatus
-export const logoutUser = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('userRole');
-    // Có thể gọi API để invalidate token ở backend nếu cần
-};
-
-export const getCurrentUser = () => {
-    const token = localStorage.getItem('authToken');
-    const role = localStorage.getItem('userRole');
-    // Trong thực tế, bạn có thể giải mã token hoặc gọi API để lấy thông tin user đầy đủ
-    if (token && role) {
-        return { isAuthenticated: true, role: role, token: token };
-    }
-    return { isAuthenticated: false, role: null, token: null };
 };

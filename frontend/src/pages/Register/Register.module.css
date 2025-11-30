@@ -1,0 +1,146 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #f0f2f5;
+    padding: 30px 15px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px; /* Form đăng ký rộng hơn Login */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h2 {
+    margin: 0;
+    color: #005eb8;
+    font-size: 26px;
+}
+
+.header p {
+    color: #666;
+    margin-top: 5px;
+}
+
+.alertError {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #fecaca;
+}
+
+.alertSuccess {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #bbf7d0;
+    font-weight: 600;
+}
+
+/* Sử dụng Grid để chia 2 cột */
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Trên màn hình nhỏ (điện thoại), chuyển về 1 cột */
+@media (max-width: 600px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.required {
+    color: red;
+    margin-left: 3px;
+}
+
+.formGroup input, 
+.selectInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.formGroup input:focus,
+.selectInput:focus {
+    border-color: #005eb8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 94, 184, 0.1);
+}
+
+.selectInput {
+    background-color: white;
+}
+
+.btnRegister {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* Màu xanh lá cho nút đăng ký */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btnRegister:hover {
+    background-color: #218838;
+}
+
+.btnRegister:disabled {
+    background-color: #86efac;
+    cursor: not-allowed;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #005eb8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
